@@ -1,0 +1,583 @@
+@import 'react-audio-player-pro/dist/style.css';
+@import 'react-notifications/lib/notifications.css';
+
+* {
+  padding: 0;
+  margin: 0
+}
+
+.artists {
+  background: #121212;
+  padding: 40px;
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .logout__container {
+      padding-top: 10px;
+
+      .logout__button {
+        background-color: #1ed760;
+        color: #121212;
+        border-radius: 500px;
+        padding: 14px 32px;
+        border: none;
+        cursor: pointer;
+        transition: background-color .3s ease;
+        width: 77%;
+        margin: 0 auto;
+        text-decoration: none;
+        text-align: center;
+        min-width: 119px;
+
+        span {
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 700;
+          text-transform: none;
+          letter-spacing: normal;
+
+        }
+
+        &:hover {
+          background-color: #1bbb54;
+        }
+      }
+    }
+  }
+
+  .spotify__icon {
+    width: 220px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  .input__container {
+    margin-bottom: 20px;
+    position: relative;
+
+    .clear__icon {
+      position: absolute;
+      left: 255px;
+      z-index: 1;
+      cursor: pointer;
+      width: 19px;
+      top: 23px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .search__icon {
+      width: 27px;
+      left: 9px;
+      z-index: 1;
+      top: 20px;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    input {
+      top: 11px;
+      position: relative;
+      border: 0;
+      border-radius: 500px;
+      color: #000;
+      height: 30px;
+      padding: 6px 48px;
+      text-overflow: ellipsis;
+      width: 200px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .artist__info__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image__container {
+      cursor: pointer;
+      margin: 10px;
+      background: #181818;
+      padding: 16px;
+      border-radius: 10px;
+      transition: background-color .3s ease;
+      max-width: 156px;
+
+      &:hover {
+        background: #ffffff2e;
+      }
+
+      .artist__name {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        margin-block: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: sans-serif;
+        padding-block-end: 4px;
+        color: white;
+        padding-top: 16px
+      }
+
+      .artist__type {
+        -webkit-tap-highlight-color: transparent;
+        margin-block: 0;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        font-family: sans-serif;
+        color: #a7a7a7;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+
+      }
+
+      .artist__image {
+        border-radius: 180px;
+        box-shadow: 0 8px 8px rgb(0, 0, 0 / 30%);
+        width: 152.66px;
+        height: 152.66px;
+      }
+    }
+  }
+}
+
+.albums {
+  background: #121212;
+  padding: 40px;
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .spotify__icon {
+    width: 220px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+
+  }
+
+  .input__container {
+    margin-bottom: 20px;
+
+    .clear__icon {
+      position: absolute;
+      width: 24px;
+      left: 529px;
+      opacity: 0.9;
+      top: 60px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .search__icon {
+      position: absolute;
+      width: 29px;
+      left: 292px;
+      z-index: 1;
+      top: 57px;
+      pointer-events: none;
+    }
+
+    input {
+      top: 11px;
+      position: relative;
+      border: 0;
+      border-radius: 500px;
+      color: #000;
+      height: 30px;
+      padding: 6px 48px;
+      text-overflow: ellipsis;
+      width: 200px;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .album__info__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image__container {
+      cursor: pointer;
+      margin: 10px;
+      background: #181818;
+      padding: 16px;
+      border-radius: 10px;
+      transition: background-color .3s ease;
+      max-width: 156px;
+
+      &:hover {
+        background: #ffffff2e;
+      }
+
+      .album__name {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        margin-block: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        font-family: sans-serif;
+        padding-block-end: 4px;
+        color: white;
+        padding-top: 16px
+      }
+
+      .album__type {
+        -webkit-tap-highlight-color: transparent;
+        margin-block: 0;
+        font-size: 0.8125rem;
+        font-weight: 400;
+        font-family: sans-serif;
+        color: #a7a7a7;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+
+      .album__image {
+        box-shadow: 0 8px 8px rgb(0, 0, 0 / 30%);
+        width: 152.66px;
+        height: 152.66px;
+      }
+    }
+  }
+}
+
+.tracks {
+  background: #121212;
+  padding: 10px;
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+
+    .album__image {
+      box-shadow: 0 4px 60px rgb(0, 0, 0 / 50%);
+      height: 232px;
+      width: 232px;;
+      margin: 20px;
+    }
+
+    .album__info {
+      display: grid;
+
+      .info__footer {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .album__name {
+        visibility: visible;
+        width: 100%;
+        font-size: 6rem;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        margin-block: 0;
+        font-weight: 900;
+        color: #fff;
+        margin-top: 50px;
+      }
+
+      .albums__type {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .75rem;
+        margin-top: 21px;
+        color: #fff;
+      }
+
+      .min__album__image {
+        width: 20px;
+        height: 20px;
+        border-radius: 180px;
+        padding: 16px
+      }
+    }
+  }
+
+
+  .spotify__icon {
+    width: 220px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+  }
+
+  audio {
+    margin-bottom: 20px;
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+.login {
+  background: #121212;
+  padding: 40px;
+  min-height: 100vh;
+
+  .login__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 160px;
+
+    .spotify__icon {
+      width: 220px;
+      margin: 0 auto;
+      padding-bottom: 45px;
+    }
+
+    .login__button {
+      background-color: #1ed760;
+      color: #121212;
+      border-radius: 500px;
+      padding: 14px 32px;
+      border: none;
+      cursor: pointer;
+      transition: padding .3s ease;
+      width: 77%;
+      margin: 0 auto;
+      text-decoration: none;
+      text-align: center;
+
+      span {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+
+      &:hover {
+        padding: 17px 35px;
+      }
+    }
+  }
+}
+
+.audio__player {
+  padding: 20px;
+}
+
+.b48888 {
+  background: #121212 !important;
+  color: #fff;
+
+  &:hover {
+    background: black;
+  }
+}
+
+.d6f4a6 {
+  border-bottom: none;
+  border-top: none;
+}
+
+.fa9e1a {
+  background-color: #121212;
+}
+
+.e0b58b {
+  background-color: #121212;
+}
+
+.df7adc {
+  color: white;
+}
+
+.loader {
+  margin: 0 auto;
+
+  span {
+    border: 15px solid rgb(218, 218, 218) !important;
+  }
+}
+
+.spinner__container {
+  position: relative;
+  z-index: 10;
+  top: 23vh;
+}
+
+@media screen and (max-width: 879px) {
+  .tracks {
+    .header {
+      .album__info {
+        .album__name {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .tracks {
+    .header {
+      flex-direction: column;
+
+      .album__image {
+        margin: 0 auto;
+        padding-top: 20px;
+      }
+
+      .album__info {
+        margin: 0 auto;
+
+        .albums__type {
+          margin: 0 auto;
+          padding-top: 22px;
+        }
+
+        .album__name {
+          font-size: 2rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 879px) {
+  .albums {
+    .spotify__icon {
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .albums {
+    padding: 0;
+
+    .album__info__container {
+      .image__container {
+        .album__name {
+          font-size: 13px;
+          max-width: 100px;
+        }
+
+        .album__image {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+    }
+
+    .spotify__icon {
+      margin: 0 auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 647px) {
+  .artists {
+    .header {
+      .logout__container {
+        padding-top: 10px;
+        margin: 0 auto;
+      }
+
+      .input__container,
+      .spotify__icon {
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .artists {
+    .header {
+      flex-direction: column;
+
+      .logout__container {
+        padding-top: 10px;
+        margin: 0 auto;
+      }
+
+      .input__container,
+      .spotify__icon {
+        margin: 0 auto;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .artists {
+    .artist__info__container {
+      .image__container {
+        max-width: 100vw;
+
+        .artist__image {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .artists {
+    .input__container {
+      .clear__icon {
+        position: absolute;
+        left: 206px;
+      }
+
+      input {
+        max-width: 149px;
+      }
+    }
+
+    .artist__info__container {
+      .image__container {
+        max-width: 100vw;
+
+        .artist__image {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .login {
+    .login__container {
+      .login__button {
+        max-width: 200px
+      }
+    }
+  }
+}
